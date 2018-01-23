@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx webpack src/index.js dist/bundle.js && node dist/bundle.js"
+    "test": "npx webpack --target=node src/index.js dist/bundle.js && node dist/bundle.js"
   },
   "keywords": [],
   "author": "",
