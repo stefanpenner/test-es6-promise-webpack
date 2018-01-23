@@ -10,8 +10,7 @@ someone to help demonstrate a reproduction.~~
 
 Reproduction: https://github.com/stefanpenner/test-es6-promise-webpack/commit/c0ee2d81db002823b79d9b5c9fd48bd41785e3cd
 
-The problem specifically, is the fallback module `vertx`, available on the `vertx` platform: http://vertx.io/
-
+The problem is the fallback module `vertx`, available only on the `vertx` platform: http://vertx.io/, cannot be resolved by webpack, as it does not typically exist. Browserify works by allowing modules to [configure externals via their package.json](https://github.com/stefanpenner/es6-promise/blob/314e4831d5a0a85edcb084444ce089c16afdcbe2/package.json#L60-L62), unfortunately webpack does not (or appears not to).
 
 ### Reproduction Instructions
 
