@@ -6,7 +6,9 @@ attempted isolated reproduction for https://github.com/stefanpenner/es6-promise/
 
 Some people are having trouble with es6-promise and webpack, unfortunately I am
 not able to reproduce. But this my attempt, and hopefully a starting point for
-someone to help demonstrate a reproduction
+someone to help demonstrate a reproduction.
+
+The problem specifically, is the fallback module `vertx`, available on the `vertx` platform: http://vertx.io/
 
 
 ### Instructions
@@ -23,4 +25,18 @@ yarn test
 
 ```
 es6-promise was webpack'd
+```
+
+
+## Potential Solutions
+
+In theory, we can confgure webpack to correctly ignore `vertx` via something like the following, but I require a reproduction to confirm.
+
+```js
+// webpack.config.js
+module.exports = {
+  externals: {
+    vertex: /** magic **/
+  }
+}
 ```
