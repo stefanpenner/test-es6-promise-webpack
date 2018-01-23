@@ -4,9 +4,11 @@ attempted isolated reproduction for https://github.com/stefanpenner/es6-promise/
 
 ### TL;DR
 
-Some people are having trouble with es6-promise and webpack, unfortunately I am
+~~Some people are having trouble with es6-promise and webpack, unfortunately I am
 not able to reproduce. But this my attempt, and hopefully a starting point for
 someone to help demonstrate a reproduction.
+
+Reproduction: https://github.com/stefanpenner/test-es6-promise-webpack/commit/c0ee2d81db002823b79d9b5c9fd48bd41785e3cd
 
 The problem specifically, is the fallback module `vertx`, available on the `vertx` platform: http://vertx.io/
 
