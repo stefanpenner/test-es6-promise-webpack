@@ -24,12 +24,21 @@ yarn test
 
 ### Expected Output:
 
-```
+```sh
+$ npx webpack --target=node src/index.js dist/bundle.js && node dist/bundle.js
+Hash: b84265d40409258e1c9b
+Version: webpack 3.10.0
+Time: 81ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  32.3 kB       0  [emitted]  main
+   [0] ./src/index.js 109 bytes {0} [built]
+    + 1 hidden module
 es6-promise was webpack'd
 ```
+
 ### Actual Output:
 
-```
+```sh
 $ npx webpack --target=node src/index.js dist/bundle.js && node dist/bundle.js
 Hash: 79ccfc4f3538d3537cd9
 Version: webpack 3.10.0
