@@ -32,6 +32,9 @@ es6-promise was webpack'd
 
 ## Potential Solutions
 
+### Configure webpack
+
+*didn't work, seems like webpack doesn't consider configuration from a module*
 In theory, we can confgure webpack to correctly ignore `vertx` via something like the following, but I require a reproduction to confirm.
 
 ```js
@@ -41,4 +44,16 @@ module.exports = {
     vertex: /** magic **/
   }
 }
+```
+
+
+### Hackity Hack
+
+**worked**
+
+Some hackity hack to defeat webpack's static anaylizer
+https://github.com/stefanpenner/es6-promise/pull/323/
+
+```js
+const vertx = Function('return this')().require('vertx');
 ```
